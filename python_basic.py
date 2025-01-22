@@ -29,4 +29,14 @@ a = [['4', '8'], ['4', '2', '28'], ['1', '12'], ['3', '6', '2']]
 print([int(x) for inlist in a for x in inlist]) #[4, 8, 4, 2, 28, 1, 12, 3, 6, 2]
 print([[int(x) for x in inlist] for inlist in a]) #[[4, 8], [4, 2, 28], [1, 12], [3, 6, 2]]
 
+#######STATIC method not receive an implicit first argument. This method can’t access or modify the class state
+class C(object):
+    @staticmethod
+    def fun(arg1, arg2, ...):
+        ...
+returns: a static method for function fun.
+#######STATIC classs decorator is a built-in function decorator that is an expression that gets evaluated after your function is defined. 
+class C(object):
+    @classmethod
+    def fun(cls, arg1, arg2, ...):
 
