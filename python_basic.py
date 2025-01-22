@@ -37,6 +37,9 @@ class C(object):
 returns: a static method for function fun.
 #######STATIC classs decorator is a built-in function decorator that is an expression that gets evaluated after your function is defined. 
 class C(object):
+    school = " samsung"
     @classmethod
-    def fun(cls, arg1, arg2, ...):
+    def fun(cls):
+        print(cls.school)
+C.fun()
 
