@@ -32,3 +32,19 @@ def beam_search_decoder(probabilities, beam_width):
         sequences = sorted(all_candidates, key=lambda tup: tup[1], reverse=True)[:beam_width]
 
     return sequences
+
+# Dummy probabilities for 2 timesteps and vocab size = 3 (tokens: 0, 1, 2)
+probs = [
+    [0.1, 0.6, 0.3],  # time step 1
+    [0.3, 0.4, 0.3]   # time step 2
+]
+
+beam_width = 2
+result = beam_search_decoder(probs, beam_width)
+
+for seq, score in result:
+    print(f"Sequence: {seq}, Score: {score:.4f}")
+#output -------->
+#Sequence: [1, 1], Score: -1.4271
+#Sequence: [1, 0], Score: -1.8971
+
